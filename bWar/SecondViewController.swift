@@ -13,6 +13,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     @IBOutlet weak var teamLabel: UILabel!
+    
+    @IBOutlet weak var mimeLabel: UILabel!
+
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex
         {
@@ -23,6 +26,12 @@ class SecondViewController: UIViewController {
         default:
             break; 
         }
+    }
+    
+    
+    @IBAction func raffleMime(sender: AnyObject) {
+        mimeLabel.text = "Mímica sorteada"
+        
     }
     
     override func viewDidLoad() {
