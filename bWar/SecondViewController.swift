@@ -20,6 +20,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var timeButton: UIButton!
 
     var timer: NSInteger = 60
+    var clock: NSTimer?
 
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex
@@ -35,14 +36,17 @@ class SecondViewController: UIViewController {
 
     
     @IBAction func startTime(sender: AnyObject) {
-       _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+       clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
     }
     
     func countdown() {
         timer--
-        if(timer >= 0)
-        {
+        if(timer >= 0) {
             timeLabel.text = String(timer)
+        } else {
+            clock!.invalidate()
+            clock = nil
+            timer = 60
         }
 
     }
