@@ -111,6 +111,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7p-Yj-it3">
+                                <rect key="frame" x="350" y="719" width="68" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-KF-Jj5">
+                                <rect key="frame" x="274" y="737" width="53" height="30"/>
+                                <state key="normal" title="INICIAR"/>
+                                <connections>
+                                    <action selector="startTime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="fqU-SP-yld"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -119,6 +132,8 @@
                         <outlet property="mimeLabel" destination="hCO-bg-NRi" id="J8Y-QP-Tiq"/>
                         <outlet property="segmentControl" destination="z06-ua-pLk" id="pry-uU-EGG"/>
                         <outlet property="teamLabel" destination="tiq-UU-MP4" id="8Xp-cp-53F"/>
+                        <outlet property="timeButton" destination="fyc-KF-Jj5" id="a99-Op-mbR"/>
+                        <outlet property="timeLabel" destination="R7p-Yj-it3" id="7na-vn-db0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

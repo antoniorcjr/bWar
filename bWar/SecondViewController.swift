@@ -16,6 +16,11 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var mimeLabel: UILabel!
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeButton: UIButton!
+
+    var timer: NSInteger = 60
+
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex
         {
@@ -27,11 +32,24 @@ class SecondViewController: UIViewController {
             break; 
         }
     }
+
+    
+    @IBAction func startTime(sender: AnyObject) {
+       _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+    }
+    
+    func countdown() {
+        timer--
+        if(timer >= 0)
+        {
+            timeLabel.text = String(timer)
+        }
+
+    }
     
     
     @IBAction func raffleMime(sender: AnyObject) {
         mimeLabel.text = "Mímica sorteada"
-        
     }
     
     override func viewDidLoad() {
