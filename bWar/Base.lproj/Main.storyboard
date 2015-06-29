@@ -130,6 +130,7 @@
                     <tabBarItem key="tabBarItem" title="Mímica" image="icoTabBarMimica" id="cPa-gy-q4n" userLabel="mimica"/>
                     <connections>
                         <outlet property="mimeLabel" destination="hCO-bg-NRi" id="J8Y-QP-Tiq"/>
+                        <outlet property="raffleMimeButton" destination="MA9-Ch-DcJ" id="fXW-PL-BxT"/>
                         <outlet property="segmentControl" destination="z06-ua-pLk" id="pry-uU-EGG"/>
                         <outlet property="teamLabel" destination="tiq-UU-MP4" id="8Xp-cp-53F"/>
                         <outlet property="timeButton" destination="fyc-KF-Jj5" id="a99-Op-mbR"/>

@@ -19,8 +19,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeButton: UIButton!
 
+    @IBOutlet weak var raffleMimeButton: UIButton!
     var timer: NSInteger = 60
     var clock: NSTimer?
+    var counting: Bool = false
 
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex
@@ -36,7 +38,14 @@ class SecondViewController: UIViewController {
 
     
     @IBAction func startTime(sender: AnyObject) {
-       clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
+        if (!counting) {
+            clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
+            segmentControl.enabled = false
+            timeButton.enabled = false
+            raffleMimeButton.enabled = false
+        } else {
+            
+        }
     }
     
     func countdown() {
@@ -47,6 +56,10 @@ class SecondViewController: UIViewController {
             clock!.invalidate()
             clock = nil
             timer = 60
+            segmentControl.enabled = true
+            timeButton.enabled = true
+            raffleMimeButton.enabled = true
+            timeLabel.text = "60"
         }
 
     }
