@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A44DA9B01B41D5740091D9AD /* advanced_dot_digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "advanced_dot_digital-7.ttf"; path = "../../advanced_dot_digital_7/advanced_dot_digital-7.ttf"; sourceTree = "<group>"; };
 		A94D13291B3C5998009F3E6B /* bWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A94D132C1B3C5998009F3E6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A94D132E1B3C5998009F3E6B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 				A94D13301B3C5998009F3E6B /* SecondViewController.swift */,
 				CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */,
 				CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */,
+				A44DA9B01B41D5740091D9AD /* advanced_dot_digital-7.ttf */,
 				A94D13321B3C5998009F3E6B /* Main.storyboard */,
 				CFD1A14E1B41074900D35B89 /* Model */,
 				A94D13351B3C5998009F3E6B /* Assets.xcassets */,

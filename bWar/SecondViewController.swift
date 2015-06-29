@@ -25,8 +25,6 @@ class SecondViewController: UIViewController {
     var counting: Bool = false
 
     @IBAction func indexChanged(sender: AnyObject) {
-        switch segmentControl.selectedSegmentIndex
-        {
         case 0:
             teamLabel.text = "Team 1";
         case 1:
@@ -41,10 +39,8 @@ class SecondViewController: UIViewController {
         if (!counting) {
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
             segmentControl.enabled = false
-            timeButton.enabled = false
             raffleMimeButton.enabled = false
         } else {
-            
         }
     }
     
