@@ -144,7 +144,7 @@
                             <userLayoutGuide location="513" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgAzulMimica" translatesAutoresizingMaskIntoConstraints="NO" id="sQB-Y9-Aii">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgAzul" translatesAutoresizingMaskIntoConstraints="NO" id="sQB-Y9-Aii">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marcadorRelogio" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-2V-Ewz">
@@ -324,7 +324,7 @@
     </scenes>
     <resources>
         <image name="backGroundDuplo" width="768" height="1024"/>
-        <image name="bgAzulMimica" width="768" height="1024"/>
+        <image name="bgAzul" width="768" height="1024"/>
         <image name="botCerto" width="163" height="99"/>
         <image name="botContadorRelogio" width="110" height="98"/>
         <image name="botErrado" width="155" height="99"/>
