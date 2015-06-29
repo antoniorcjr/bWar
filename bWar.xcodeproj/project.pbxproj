@@ -16,6 +16,12 @@
 		A94D13441B3C5998009F3E6B /* bWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94D13431B3C5998009F3E6B /* bWarTests.swift */; };
 		A94D134F1B3C5998009F3E6B /* bWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94D134E1B3C5998009F3E6B /* bWarUITests.swift */; };
 		A974767D1B3EF0CB00441A10 /* bWarModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A974767B1B3EF0CB00441A10 /* bWarModel.xcdatamodeld */; };
+		CF4134591B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */; };
+		CF41345A1B4107BF0033686F /* BWImitationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134581B4107BF0033686F /* BWImitationGame.swift */; };
+		CF41345D1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */; };
+		CF41345E1B4107C00033686F /* BWQuestionGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345C1B4107C00033686F /* BWQuestionGame.swift */; };
+		CF4134611B4107C00033686F /* BWTeam+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345F1B4107C00033686F /* BWTeam+CoreDataProperties.swift */; };
+		CF4134621B4107C00033686F /* BWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134601B4107C00033686F /* BWTeam.swift */; };
 		CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */; };
 		CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +59,12 @@
 		A94D134E1B3C5998009F3E6B /* bWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bWarUITests.swift; sourceTree = "<group>"; };
 		A94D13501B3C5998009F3E6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A974767C1B3EF0CB00441A10 /* bWarModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bWarModel.xcdatamodel; sourceTree = "<group>"; };
+		CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWImitationGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF4134581B4107BF0033686F /* BWImitationGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWImitationGame.swift; sourceTree = "<group>"; };
+		CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWQuestionGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF41345C1B4107C00033686F /* BWQuestionGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWQuestionGame.swift; sourceTree = "<group>"; };
+		CF41345F1B4107C00033686F /* BWTeam+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWTeam+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF4134601B4107C00033686F /* BWTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWTeam.swift; sourceTree = "<group>"; };
 		CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +123,7 @@
 				CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */,
 				CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */,
 				A94D13321B3C5998009F3E6B /* Main.storyboard */,
-				A974767B1B3EF0CB00441A10 /* bWarModel.xcdatamodeld */,
+				CFD1A14E1B41074900D35B89 /* Model */,
 				A94D13351B3C5998009F3E6B /* Assets.xcassets */,
 				A94D13371B3C5998009F3E6B /* LaunchScreen.storyboard */,
 				A94D133A1B3C5998009F3E6B /* Info.plist */,
@@ -135,6 +147,28 @@
 				A94D13501B3C5998009F3E6B /* Info.plist */,
 			);
 			path = bWarUITests;
+			sourceTree = "<group>";
+		};
+		CFD1A14E1B41074900D35B89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFD1A14F1B41076900D35B89 /* entity */,
+				A974767B1B3EF0CB00441A10 /* bWarModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CFD1A14F1B41076900D35B89 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				CF41345F1B4107C00033686F /* BWTeam+CoreDataProperties.swift */,
+				CF4134601B4107C00033686F /* BWTeam.swift */,
+				CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */,
+				CF41345C1B4107C00033686F /* BWQuestionGame.swift */,
+				CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */,
+				CF4134581B4107BF0033686F /* BWImitationGame.swift */,
+			);
+			name = entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4134591B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift in Sources */,
+				CF41345D1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift in Sources */,
+				CF4134611B4107C00033686F /* BWTeam+CoreDataProperties.swift in Sources */,
+				CF41345A1B4107BF0033686F /* BWImitationGame.swift in Sources */,
 				A94D13311B3C5998009F3E6B /* SecondViewController.swift in Sources */,
 				A94D132D1B3C5998009F3E6B /* AppDelegate.swift in Sources */,
 				CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */,
+				CF4134621B4107C00033686F /* BWTeam.swift in Sources */,
+				CF41345E1B4107C00033686F /* BWQuestionGame.swift in Sources */,
 				A94D132F1B3C5998009F3E6B /* FirstViewController.swift in Sources */,
 				CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */,
 				A974767D1B3EF0CB00441A10 /* bWarModel.xcdatamodeld in Sources */,
