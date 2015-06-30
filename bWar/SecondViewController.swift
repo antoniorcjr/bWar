@@ -41,12 +41,12 @@ class SecondViewController: UIViewController {
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
             segmentControl.enabled = false
             raffleMimeButton.enabled = false
-            timeButton.setTitle("PAUSAR", forState: UIControlState.Normal)
+            //timeButton.setTitle("PAUSAR", forState: UIControlState.Normal)
             counting = true
         } else {
             clock!.invalidate()
             clock = nil
-            timeButton.setTitle("INICIAR", forState: UIControlState.Normal)
+            //timeButton.setTitle("INICIAR", forState: UIControlState.Normal)
             counting = false
         }
     }
@@ -54,7 +54,11 @@ class SecondViewController: UIViewController {
     func countdown() {
         timer--
         if(timer >= 0) {
-            timeLabel.text = String(timer)
+            if (timer > 9) {
+                timeLabel.text = String(format: "00:%d", timer)
+            } else {
+                timeLabel.text = String(format: "00:0%d", timer)
+            }
         } else {
             clock!.invalidate()
             clock = nil
@@ -62,7 +66,7 @@ class SecondViewController: UIViewController {
             segmentControl.enabled = true
             timeButton.enabled = true
             raffleMimeButton.enabled = true
-            timeLabel.text = "60"
+            timer = 60
         }
 
     }
