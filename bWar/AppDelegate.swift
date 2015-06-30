@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        initializeBD()
     }
     
     
@@ -106,6 +107,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    func initializeBD(){
+        
+        // MORNING TEAM
+    
+        let entity01 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+        let bwTeam01 = NSManagedObject(entity: entity01!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        bwTeam01.setValue(1, forKey: "id")
+        bwTeam01.setValue("Time A01", forKey: "name")
+        bwTeam01.setValue(0, forKey: "score")
+        bwTeam01.setValue(0, forKey: "isMorning")
+        
+        
+        let entity02 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+        let bwTeam02 = NSManagedObject(entity: entity02!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        bwTeam02.setValue(2, forKey: "id")
+        bwTeam02.setValue("Time B01", forKey: "name")
+        bwTeam02.setValue(0, forKey: "score")
+        bwTeam02.setValue(0, forKey: "isMorning")
+        
+        
+        // AFTERNOON TEAM
+        
+        let entity03 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+        let bwTeam03 = NSManagedObject(entity: entity03!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        bwTeam03.setValue(1, forKey: "id")
+        bwTeam03.setValue("Time A02", forKey: "name")
+        bwTeam03.setValue(0, forKey: "score")
+        bwTeam03.setValue(1, forKey: "isMorning")
+        
+        
+        let entity04 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+        let bwTeam04 = NSManagedObject(entity: entity04!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        bwTeam04.setValue(2, forKey: "id")
+        bwTeam04.setValue("Time B02", forKey: "name")
+        bwTeam04.setValue(0, forKey: "score")
+        bwTeam04.setValue(1, forKey: "isMorning")
+    
     }
 }
 

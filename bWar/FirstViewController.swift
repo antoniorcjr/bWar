@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FirstViewController: UIViewController {
 
@@ -35,6 +36,8 @@ class FirstViewController: UIViewController {
     @IBAction func incrementPointsTeam01(sender: AnyObject) {
         let value: Int? = Int(lbPointsT01.text!)
         lbPointsT01.text = "\(value! + 10)"
+        
+        
     }
 
     @IBAction func decrementPointsTeam01(sender: AnyObject) {
@@ -56,5 +59,27 @@ class FirstViewController: UIViewController {
             lbPointsT02.text = "\(value! - 10)"
         }
     }
+    
+    func managedObject()->NSManagedObjectContext {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.managedObjectContext
+    }
+    
+//    
+//    func saveRank(){
+//
+//        let fetchRequest = NSFetchRequest(entityName: "BWTeam")
+//        
+//        let fetchResults = try managedObject().executeFetchRequest(fetchRequest) as! [BWTeam]
+//    
+//            if let bwTeams = fetchResults {
+//                let bwTeam01 = bwTeams[0]
+//            }
+//            
+//        }catch {
+//            NSLog("exception");
+//        }
+//        
+//    }
 }
 
