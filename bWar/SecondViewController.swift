@@ -12,6 +12,7 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var backgroundTeam: UIImageView!
     @IBOutlet weak var teamLabel: UILabel!
     
     @IBOutlet weak var mimeLabel: UILabel!
@@ -27,8 +28,10 @@ class SecondViewController: UIViewController {
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
+            backgroundTeam.image = UIImage(named: "bgAzul")
             teamLabel.text = "Team 1";
         case 1:
+            backgroundTeam.image = UIImage(named: "backGroundDuplo")
             teamLabel.text = "Team 2";
         default:
             break; 
