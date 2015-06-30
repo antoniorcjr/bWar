@@ -23,11 +23,11 @@ class FirstViewController: UIViewController {
         
         
         lbNameT01.text = "Time A"
-        lbScoreT01.text = "0"
+        //lbScoreT01.text = "0"
         lbPointsT01.text = "10"
         
         lbNameT02.text = "Time B"
-        lbScoreT02.text = "0"
+        //lbScoreT02.text = "0"
         lbPointsT02.text = "10"
     }
 
