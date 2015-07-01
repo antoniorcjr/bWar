@@ -222,6 +222,7 @@
                         <outlet property="lbNameT02" destination="YBg-Wd-qZO" id="nhE-OE-Q4N"/>
                         <outlet property="lbPointsT01" destination="DgF-Ce-2ce" id="ZNP-uv-8d5"/>
                         <outlet property="lbPointsT02" destination="L38-65-dOd" id="kZZ-9V-aRj"/>
+                        <outlet property="segmentControl" destination="SDb-XG-DAf" id="ZoA-lk-5tQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQJ-Ce-LtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,6 +488,7 @@
                         <outlet property="lbNameT02" destination="C15-ht-FpQ" id="vUy-FO-MZW"/>
                         <outlet property="lbPointsT01" destination="JYo-D7-J8L" id="yPG-W5-Z0P"/>
                         <outlet property="lbPointsT02" destination="PaV-f7-inB" id="9gC-PB-BiC"/>
+                        <outlet property="segmentControl" destination="M1J-KX-hgD" id="gjZ-Ye-2cR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhQ-zT-vP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
