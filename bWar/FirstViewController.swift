@@ -75,9 +75,6 @@ class FirstViewController: UIViewController {
         
         let bwTeams = daoTeam().loadData()
         
-        print("*** FirstViewController.loadData team 01 -> \(bwTeams[0].name)")
-        print("*** FirstViewController.loadData team 02 -> \(bwTeams[1].name)")
-        
         lbNameT01.text = bwTeams[0].name
         lbPointsT01.text = bwTeams[0].score?.stringValue
         

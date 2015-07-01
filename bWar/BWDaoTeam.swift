@@ -12,6 +12,8 @@ import CoreData
 class BWDaoTeam {
     
     let ENTITY_TEAM = "BWTeam"
+    let NAME_TEAM_A = "The Blues"
+    let NAME_TEAM_B = "The Reds"
     
     var managedObjectContext: NSManagedObjectContext
     
@@ -129,7 +131,7 @@ class BWDaoTeam {
         let bwTeam01 = NSManagedObject(entity: entity01!, insertIntoManagedObjectContext: managedObjectContext)
         
         bwTeam01.setValue(1, forKey: "id")
-        bwTeam01.setValue("The Blues", forKey: "name")
+        bwTeam01.setValue(NAME_TEAM_A, forKey: "name")
         bwTeam01.setValue(0, forKey: "score")
         bwTeam01.setValue(0, forKey: "isMorning")
 
@@ -138,7 +140,7 @@ class BWDaoTeam {
         let bwTeam02 = NSManagedObject(entity: entity02!, insertIntoManagedObjectContext: managedObjectContext)
         
         bwTeam02.setValue(2, forKey: "id")
-        bwTeam02.setValue("The Reds", forKey: "name")
+        bwTeam02.setValue(NAME_TEAM_B, forKey: "name")
         bwTeam02.setValue(0, forKey: "score")
         bwTeam02.setValue(0, forKey: "isMorning")
         
