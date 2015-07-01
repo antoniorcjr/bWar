@@ -26,6 +26,7 @@
 		CF4134621B4107C00033686F /* BWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134601B4107C00033686F /* BWTeam.swift */; };
 		CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */; };
 		CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */; };
+		CFB00FDA1B4433A6007349A3 /* BWDaoTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CF4134601B4107C00033686F /* BWTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWTeam.swift; sourceTree = "<group>"; };
 		CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWDaoTeam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +157,18 @@
 			path = bWarUITests;
 			sourceTree = "<group>";
 		};
+		CFB00FD81B443383007349A3 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
 		CFD1A14E1B41074900D35B89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CFB00FD81B443383007349A3 /* dao */,
 				CFD1A14F1B41076900D35B89 /* entity */,
 				A974767B1B3EF0CB00441A10 /* bWarModel.xcdatamodeld */,
 			);
@@ -323,6 +334,7 @@
 				A94D132F1B3C5998009F3E6B /* FirstViewController.swift in Sources */,
 				CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */,
 				A974767D1B3EF0CB00441A10 /* bWarModel.xcdatamodeld in Sources */,
+				CFB00FDA1B4433A6007349A3 /* BWDaoTeam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,7 @@ class FirstViewController: UIViewController {
     @IBAction func incrementPointsTeam01(sender: AnyObject) {
         let points = (Int(lbPointsT01.text!)! + CONST_SCORE)
         lbPointsT01.text = "\(points)"
-        self.saveRank(true, points: points)
+        daoTeam().updateScore(true, points: points)
     }
 
     @IBAction func decrementPointsTeam01(sender: AnyObject) {
@@ -45,14 +45,14 @@ class FirstViewController: UIViewController {
         
         if (points >= 0) {
             lbPointsT01.text = "\(points)"
-            self.saveRank(true, points: points)
+            daoTeam().updateScore(true, points: points)
         }
     }
 
     @IBAction func incrementPointsTeam02(sender: AnyObject) {
         let points = (Int(lbPointsT02.text!)! + CONST_SCORE)
         lbPointsT02.text = "\(points)"
-        self.saveRank(false, points: points)
+        daoTeam().updateScore(false, points: points)
     }
     
     @IBAction func decrementPointsTeam02(sender: AnyObject) {
@@ -61,88 +61,28 @@ class FirstViewController: UIViewController {
         
         if (points >= 0) {
             lbPointsT02.text = "\(points)"
-            self.saveRank(false, points: points)
+            daoTeam().updateScore(false, points: points)
         }
     }
     
-    func managedObject()->NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
-    }
-    
-    
-    // MARK: - Mover p outra classe responsavel pela comunicacao com o BD
-    
-    func saveRank(isTeamA: Bool, points: Int){
-
-        let fetchRequest = NSFetchRequest(entityName: "BWTeam")
-
-        do {
-
-            let fetchResults = try managedObject().executeFetchRequest(fetchRequest) as! [BWTeam]
-
-            let bwTeams = fetchResults
-
-            if(bwTeams.count > 0)  {
-                
-                let index = ((isTeamA) ? 0 : 1)
-                let bwTeam = bwTeams[index]
-                bwTeam.score = points
-            }
-
-            do {
-                try managedObject().save()
-//                print("save Rank")
-
-            }catch {
-                print("exception saveRank Exception --> save")
-            }
-            
-        }catch {
-            print("*** saveRank Exception --> executeFetchRequest");
-        }
-        
+    func daoTeam() -> BWDaoTeam {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
     }
 
     func loadData(){
         
         print("*** FirstViewController.loadData")
         
-        let entityDescritpion = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: self.managedObject())
+        let bwTeams = daoTeam().loadData()
         
-        let fetchRequest = NSFetchRequest(entityName: "BWTeam")
-        fetchRequest.entity = entityDescritpion
+        print("*** FirstViewController.loadData team 01 -> \(bwTeams[0].name)")
+        print("*** FirstViewController.loadData team 02 -> \(bwTeams[1].name)")
         
-        do {
-            
-            let fetchResults = try managedObject().executeFetchRequest(fetchRequest) as! [BWTeam]
-            
-            let bwTeams = fetchResults
-            
-            print("FirstViewController.loadData bwTeams.count--> \(bwTeams.count)")
-            
-            if(bwTeams.count > 0)  {
-                
-                let bwTeam01 = bwTeams[0]
-                let bwTeam02 = bwTeams[1]
-                
-//                self.bwTeamA.name = bwTeams[0].name
-//                print("*** FirstViewController.loadData bwTeamA -> \(bwTeamA.name)")
-
-                
-                print("*** FirstViewController.loadData team 01 -> \(bwTeam01.name)")
-                print("*** FirstViewController.loadData team 02 -> \(bwTeam02.name)")
-                
-                lbNameT01.text = bwTeam01.name
-                lbPointsT01.text = bwTeam01.score?.stringValue
-                
-                lbNameT02.text = bwTeam02.name
-                lbPointsT02.text = bwTeam02.score?.stringValue
-            }
-            
-        }catch {
-            print("*** FirstViewController.loadData Exception");
-        }
+        lbNameT01.text = bwTeams[0].name
+        lbPointsT01.text = bwTeams[0].score?.stringValue
+        
+        lbNameT02.text = bwTeams[1].name
+        lbPointsT02.text = bwTeams[1].score?.stringValue
     }
 }
 

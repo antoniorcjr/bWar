@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        
-        print("delegate.hasBD --> \(self.hasBD())")
+        print("delegate.hasBD --> \(daoTeam.hasDataBase())")
+        
         //TODO: retirar isso, vê metodo da API pra fazer isso (hasBD?)
-        if (!self.hasBD()) {
-            initializeBD()
+        if (!daoTeam.hasDataBase()) {
+            self.daoTeam.initializeBD()
         }
 //        self.autoSave()
         return true
@@ -100,6 +100,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return managedObjectContext
         }()
     
+    lazy var daoTeam: BWDaoTeam = {
+        return BWDaoTeam(context: self.managedObjectContext)
+    }()
+    
     // MARK: - Core Data Saving support
     
     func saveContext () {
@@ -115,94 +119,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
-    }
-    
-    func initializeBD(){
-        
-        // MORNING TEAM
-    
-        let entity01 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-        let bwTeam01 = NSManagedObject(entity: entity01!, insertIntoManagedObjectContext: managedObjectContext)
-        
-        bwTeam01.setValue(1, forKey: "id")
-        bwTeam01.setValue("Time A", forKey: "name")
-        bwTeam01.setValue(0, forKey: "score")
-        bwTeam01.setValue(0, forKey: "isMorning")
-        
-        
-        NSLog("---- \(bwTeam01)")
-        
-        let entity02 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-        let bwTeam02 = NSManagedObject(entity: entity02!, insertIntoManagedObjectContext: managedObjectContext)
-        
-        bwTeam02.setValue(2, forKey: "id")
-        bwTeam02.setValue("Time B", forKey: "name")
-        bwTeam02.setValue(0, forKey: "score")
-        bwTeam02.setValue(0, forKey: "isMorning")
-        
-        
-//        // AFTERNOON TEAM
-//        
-//        let entity03 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-//        let bwTeam03 = NSManagedObject(entity: entity03!, insertIntoManagedObjectContext: managedObjectContext)
-//        
-//        bwTeam03.setValue(1, forKey: "id")
-//        bwTeam03.setValue("Time A02", forKey: "name")
-//        bwTeam03.setValue(0, forKey: "score")
-//        bwTeam03.setValue(1, forKey: "isMorning")
-//        
-//        
-//        let entity04 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-//        let bwTeam04 = NSManagedObject(entity: entity04!, insertIntoManagedObjectContext: managedObjectContext)
-//        
-//        bwTeam04.setValue(2, forKey: "id")
-//        bwTeam04.setValue("Time B02", forKey: "name")
-//        bwTeam04.setValue(0, forKey: "score")
-//        bwTeam04.setValue(1, forKey: "isMorning")
-        
-        do {
-            try
-                managedObjectContext.save()
-            print("delegate save initializeBD")
-            
-        }catch {
-            print("delegate exception save error")
-        }
-
-        self.hasBD()
-    }
-    
-    //TODO: retirar isso, vê metodo da API pra fazer isso (hasBD?)
-    func hasBD()->Bool{
-        
-        print("delegate.hasBD")
-        
-        let entityDescritpion = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: self.managedObjectContext)
-        
-        let fetchRequest = NSFetchRequest(entityName: "BWTeam")
-        fetchRequest.entity = entityDescritpion
-        
-        do {
-            
-            let fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as! [BWTeam]
-            let bwTeams = fetchResults
-            
-            if(bwTeams.count > 0)  {
-                
-//                let bwTeam01 = bwTeams[0]
-//                let bwTeam02 = bwTeams[1]
-//                
-//                print("*** delegate team 01 -> \(bwTeam01.name)")
-//                print("*** delegate team 02 -> \(bwTeam02.name)")
-                
-                return true
-            }
-            
-        }catch {
-            print("delegate exception");
-        }
-        
-        return false
     }
     
     func autoSave() {
