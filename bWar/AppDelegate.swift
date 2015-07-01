@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+       
+        print("delegate.hasBD --> \(self.hasBD())")
+        //TODO: retirar isso, vê metodo da API pra fazer isso (hasBD?)
+        if (!self.hasBD()) {
+            initializeBD()
+        }
+        
         return true
     }
 
@@ -42,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
-        initializeBD()
     }
     
     
@@ -56,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("SwiftTesteCoreData", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("bWarModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
     
@@ -64,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("bWarModel.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
@@ -117,39 +123,86 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bwTeam01 = NSManagedObject(entity: entity01!, insertIntoManagedObjectContext: managedObjectContext)
         
         bwTeam01.setValue(1, forKey: "id")
-        bwTeam01.setValue("Time A01", forKey: "name")
+        bwTeam01.setValue("Time A", forKey: "name")
         bwTeam01.setValue(0, forKey: "score")
         bwTeam01.setValue(0, forKey: "isMorning")
         
+        
+        NSLog("---- \(bwTeam01)")
         
         let entity02 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
         let bwTeam02 = NSManagedObject(entity: entity02!, insertIntoManagedObjectContext: managedObjectContext)
         
         bwTeam02.setValue(2, forKey: "id")
-        bwTeam02.setValue("Time B01", forKey: "name")
+        bwTeam02.setValue("Time B", forKey: "name")
         bwTeam02.setValue(0, forKey: "score")
         bwTeam02.setValue(0, forKey: "isMorning")
         
         
-        // AFTERNOON TEAM
+//        // AFTERNOON TEAM
+//        
+//        let entity03 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+//        let bwTeam03 = NSManagedObject(entity: entity03!, insertIntoManagedObjectContext: managedObjectContext)
+//        
+//        bwTeam03.setValue(1, forKey: "id")
+//        bwTeam03.setValue("Time A02", forKey: "name")
+//        bwTeam03.setValue(0, forKey: "score")
+//        bwTeam03.setValue(1, forKey: "isMorning")
+//        
+//        
+//        let entity04 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
+//        let bwTeam04 = NSManagedObject(entity: entity04!, insertIntoManagedObjectContext: managedObjectContext)
+//        
+//        bwTeam04.setValue(2, forKey: "id")
+//        bwTeam04.setValue("Time B02", forKey: "name")
+//        bwTeam04.setValue(0, forKey: "score")
+//        bwTeam04.setValue(1, forKey: "isMorning")
         
-        let entity03 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-        let bwTeam03 = NSManagedObject(entity: entity03!, insertIntoManagedObjectContext: managedObjectContext)
-        
-        bwTeam03.setValue(1, forKey: "id")
-        bwTeam03.setValue("Time A02", forKey: "name")
-        bwTeam03.setValue(0, forKey: "score")
-        bwTeam03.setValue(1, forKey: "isMorning")
-        
-        
-        let entity04 = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: managedObjectContext)
-        let bwTeam04 = NSManagedObject(entity: entity04!, insertIntoManagedObjectContext: managedObjectContext)
-        
-        bwTeam04.setValue(2, forKey: "id")
-        bwTeam04.setValue("Time B02", forKey: "name")
-        bwTeam04.setValue(0, forKey: "score")
-        bwTeam04.setValue(1, forKey: "isMorning")
+        do {
+            try
+                managedObjectContext.save()
+            print("delegate save initializeBD")
+            
+        }catch {
+            print("delegate exception save error")
+        }
+
+        self.hasBD()
+    }
     
+    //TODO: retirar isso, vê metodo da API pra fazer isso (hasBD?)
+    func hasBD()->Bool{
+        
+        print("delegate.hasBD")
+        
+        let entityDescritpion = NSEntityDescription.entityForName("BWTeam", inManagedObjectContext: self.managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: "BWTeam")
+        fetchRequest.entity = entityDescritpion
+        
+        do {
+            
+            let fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as! [BWTeam]
+            let bwTeams = fetchResults
+            
+            if(bwTeams.count > 0)  {
+                
+                
+                
+                let bwTeam01 = bwTeams[0]
+                let bwTeam02 = bwTeams[1]
+                
+                print("*** delegate team 01 -> \(bwTeam01.name)")
+                print("*** delegate team 02 -> \(bwTeam02.name)")
+                
+                return true
+            }
+            
+        }catch {
+            print("delegate exception");
+        }
+        
+        return false
     }
 }
 

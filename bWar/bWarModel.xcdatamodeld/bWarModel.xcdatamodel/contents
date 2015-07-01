@@ -13,7 +13,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="BWTeam" representedClassName=".BWTeam" syncable="YES">
+    <entity name="BWTeam" representedClassName="BWTeam" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="isMorning" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,8 +21,8 @@
     </entity>
     <elements>
         <element name="BWImitationGame" positionX="-99" positionY="-171" width="128" height="75"/>
+        <element name="BWJoking" positionX="-101" positionY="-288" width="128" height="75"/>
         <element name="BWQuestionGame" positionX="-252" positionY="-189" width="128" height="90"/>
         <element name="BWTeam" positionX="-252" positionY="-303" width="128" height="105"/>
-        <element name="BWJoking" positionX="-101" positionY="-288" width="128" height="75"/>
     </elements>
 </model>
