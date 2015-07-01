@@ -2,7 +2,7 @@
 //  BWJoking.swift
 //  bWar
 //
-//  Created by Adriana Izel on 6/29/15.
+//  Created by Adriana Izel on 7/1/15.
 //  Copyright © 2015 BEPiD. All rights reserved.
 //
 

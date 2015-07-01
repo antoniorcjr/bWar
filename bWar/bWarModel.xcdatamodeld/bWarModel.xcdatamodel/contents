@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14D136" minimumToolsVersion="Xcode 7.0">
-    <entity name="BWImitationGame" representedClassName=".BWImitationGame" syncable="YES">
+    <entity name="BWImitationGame" representedClassName="BWImitationGame" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="imitation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="BWJoking" representedClassName=".BWJoking" syncable="YES">
+    <entity name="BWJoking" representedClassName="BWJoking" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="joking" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="BWQuestionGame" representedClassName=".BWQuestionGame" syncable="YES">
+    <entity name="BWQuestionGame" representedClassName="BWQuestionGame" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +21,7 @@
         <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BWImitationGame" positionX="-99" positionY="-171" width="128" height="75"/>
+        <element name="BWImitationGame" positionX="-99" positionY="-171" width="128" height="90"/>
         <element name="BWJoking" positionX="-101" positionY="-288" width="128" height="75"/>
         <element name="BWQuestionGame" positionX="-252" positionY="-189" width="128" height="90"/>
         <element name="BWTeam" positionX="-252" positionY="-303" width="128" height="105"/>

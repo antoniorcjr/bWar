@@ -12,6 +12,7 @@ import CoreData
 class BWDaoTeam {
     
     let ENTITY_TEAM = "BWTeam"
+    let ENTITY_IMITATION_GAME = "BWImitationGame"
     let NAME_TEAM_A = "The Blues"
     let NAME_TEAM_B = "The Reds"
     
@@ -129,7 +130,7 @@ class BWDaoTeam {
         
         print("DaoTeam initializeBD()")
         
-        // MORNING TEAM
+        // TEAM
         
         let entity01 = NSEntityDescription.entityForName(ENTITY_TEAM, inManagedObjectContext: managedObjectContext)
         let bwTeam01 = NSManagedObject(entity: entity01!, insertIntoManagedObjectContext: managedObjectContext)
@@ -147,6 +148,7 @@ class BWDaoTeam {
         bwTeam02.setValue(NAME_TEAM_B, forKey: "name")
         bwTeam02.setValue(0, forKey: "score")
         bwTeam02.setValue(0, forKey: "isMorning")
+        
         
         do {
             try

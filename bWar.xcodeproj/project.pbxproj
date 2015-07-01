@@ -16,14 +16,14 @@
 		A94D13441B3C5998009F3E6B /* bWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94D13431B3C5998009F3E6B /* bWarTests.swift */; };
 		A94D134F1B3C5998009F3E6B /* bWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94D134E1B3C5998009F3E6B /* bWarUITests.swift */; };
 		A974767D1B3EF0CB00441A10 /* bWarModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A974767B1B3EF0CB00441A10 /* bWarModel.xcdatamodeld */; };
-		CF0B63411B42298C00A84C97 /* BWJoking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0B633F1B42298C00A84C97 /* BWJoking+CoreDataProperties.swift */; };
-		CF0B63421B42298C00A84C97 /* BWJoking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0B63401B42298C00A84C97 /* BWJoking.swift */; };
-		CF4134591B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */; };
-		CF41345A1B4107BF0033686F /* BWImitationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134581B4107BF0033686F /* BWImitationGame.swift */; };
 		CF41345D1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */; };
 		CF41345E1B4107C00033686F /* BWQuestionGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345C1B4107C00033686F /* BWQuestionGame.swift */; };
 		CF4134611B4107C00033686F /* BWTeam+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41345F1B4107C00033686F /* BWTeam+CoreDataProperties.swift */; };
 		CF4134621B4107C00033686F /* BWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4134601B4107C00033686F /* BWTeam.swift */; };
+		CF654F071B4495D800092804 /* BWJoking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654F051B4495D800092804 /* BWJoking+CoreDataProperties.swift */; };
+		CF654F081B4495D800092804 /* BWJoking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654F061B4495D800092804 /* BWJoking.swift */; };
+		CF654F0B1B4495D900092804 /* BWImitationGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654F091B4495D900092804 /* BWImitationGame+CoreDataProperties.swift */; };
+		CF654F0C1B4495D900092804 /* BWImitationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654F0A1B4495D900092804 /* BWImitationGame.swift */; };
 		CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */; };
 		CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */; };
 		CFB00FDA1B4433A6007349A3 /* BWDaoTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */; };
@@ -64,14 +64,14 @@
 		A94D134E1B3C5998009F3E6B /* bWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bWarUITests.swift; sourceTree = "<group>"; };
 		A94D13501B3C5998009F3E6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A974767C1B3EF0CB00441A10 /* bWarModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bWarModel.xcdatamodel; sourceTree = "<group>"; };
-		CF0B633F1B42298C00A84C97 /* BWJoking+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWJoking+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CF0B63401B42298C00A84C97 /* BWJoking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWJoking.swift; sourceTree = "<group>"; };
-		CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWImitationGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CF4134581B4107BF0033686F /* BWImitationGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWImitationGame.swift; sourceTree = "<group>"; };
 		CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWQuestionGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF41345C1B4107C00033686F /* BWQuestionGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWQuestionGame.swift; sourceTree = "<group>"; };
 		CF41345F1B4107C00033686F /* BWTeam+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWTeam+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF4134601B4107C00033686F /* BWTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWTeam.swift; sourceTree = "<group>"; };
+		CF654F051B4495D800092804 /* BWJoking+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWJoking+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF654F061B4495D800092804 /* BWJoking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWJoking.swift; sourceTree = "<group>"; };
+		CF654F091B4495D900092804 /* BWImitationGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BWImitationGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF654F0A1B4495D900092804 /* BWImitationGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWImitationGame.swift; sourceTree = "<group>"; };
 		CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWDaoTeam.swift; sourceTree = "<group>"; };
@@ -185,10 +185,10 @@
 				CF4134601B4107C00033686F /* BWTeam.swift */,
 				CF41345B1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift */,
 				CF41345C1B4107C00033686F /* BWQuestionGame.swift */,
-				CF4134571B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift */,
-				CF4134581B4107BF0033686F /* BWImitationGame.swift */,
-				CF0B633F1B42298C00A84C97 /* BWJoking+CoreDataProperties.swift */,
-				CF0B63401B42298C00A84C97 /* BWJoking.swift */,
+				CF654F091B4495D900092804 /* BWImitationGame+CoreDataProperties.swift */,
+				CF654F0A1B4495D900092804 /* BWImitationGame.swift */,
+				CF654F051B4495D800092804 /* BWJoking+CoreDataProperties.swift */,
+				CF654F061B4495D800092804 /* BWJoking.swift */,
 			);
 			name = entity;
 			sourceTree = "<group>";
@@ -323,13 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF654F071B4495D800092804 /* BWJoking+CoreDataProperties.swift in Sources */,
+				CF654F0C1B4495D900092804 /* BWImitationGame.swift in Sources */,
+				CF654F0B1B4495D900092804 /* BWImitationGame+CoreDataProperties.swift in Sources */,
 				CFB00FDC1B448773007349A3 /* UtilViewController.swift in Sources */,
-				CF0B63411B42298C00A84C97 /* BWJoking+CoreDataProperties.swift in Sources */,
-				CF4134591B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift in Sources */,
 				CF41345D1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift in Sources */,
 				CF4134611B4107C00033686F /* BWTeam+CoreDataProperties.swift in Sources */,
-				CF0B63421B42298C00A84C97 /* BWJoking.swift in Sources */,
-				CF41345A1B4107BF0033686F /* BWImitationGame.swift in Sources */,
+				CF654F081B4495D800092804 /* BWJoking.swift in Sources */,
 				A94D13311B3C5998009F3E6B /* SecondViewController.swift in Sources */,
 				A94D132D1B3C5998009F3E6B /* AppDelegate.swift in Sources */,
 				CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */,
