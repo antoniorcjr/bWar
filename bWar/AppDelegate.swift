@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (!self.hasBD()) {
             initializeBD()
         }
-        
+//        self.autoSave()
         return true
     }
 
@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        print("delegate.applicationWillTerminate")
     }
     
     
@@ -102,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
     
     func saveContext () {
+        print("delegate managedObjectContext.hasChanges --> \(managedObjectContext.hasChanges )")
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()
@@ -187,13 +189,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if(bwTeams.count > 0)  {
                 
-                
-                
-                let bwTeam01 = bwTeams[0]
-                let bwTeam02 = bwTeams[1]
-                
-                print("*** delegate team 01 -> \(bwTeam01.name)")
-                print("*** delegate team 02 -> \(bwTeam02.name)")
+//                let bwTeam01 = bwTeams[0]
+//                let bwTeam02 = bwTeams[1]
+//                
+//                print("*** delegate team 01 -> \(bwTeam01.name)")
+//                print("*** delegate team 02 -> \(bwTeam02.name)")
                 
                 return true
             }
@@ -203,6 +203,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return false
+    }
+    
+    func autoSave() {
+        dispatch_after(1, dispatch_get_main_queue(), {
+            self.saveContext()
+        })
     }
 }
 
