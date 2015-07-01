@@ -16,6 +16,10 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var lbNameT02: UILabel!
     @IBOutlet weak var lbPointsT02: UILabel!
     
+    lazy var daoTeam: BWDaoTeam = {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
+        }()
+    
     let CONST_SCORE = 5
     
 //    private var bwTeamA: BWTeam = BWTeam()
@@ -25,7 +29,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         
         // Default Initialization
-        loadData()
+        initializeView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +40,7 @@ class FirstViewController: UIViewController {
     @IBAction func incrementPointsTeam01(sender: AnyObject) {
         let points = (Int(lbPointsT01.text!)! + CONST_SCORE)
         lbPointsT01.text = "\(points)"
-        daoTeam().updateScore(true, points: points)
+        self.daoTeam.updateScore(true, points: points)
     }
 
     @IBAction func decrementPointsTeam01(sender: AnyObject) {
@@ -45,14 +49,14 @@ class FirstViewController: UIViewController {
         
         if (points >= 0) {
             lbPointsT01.text = "\(points)"
-            daoTeam().updateScore(true, points: points)
+            self.daoTeam.updateScore(true, points: points)
         }
     }
 
     @IBAction func incrementPointsTeam02(sender: AnyObject) {
         let points = (Int(lbPointsT02.text!)! + CONST_SCORE)
         lbPointsT02.text = "\(points)"
-        daoTeam().updateScore(false, points: points)
+        self.daoTeam.updateScore(false, points: points)
     }
     
     @IBAction func decrementPointsTeam02(sender: AnyObject) {
@@ -61,19 +65,15 @@ class FirstViewController: UIViewController {
         
         if (points >= 0) {
             lbPointsT02.text = "\(points)"
-            daoTeam().updateScore(false, points: points)
+            self.daoTeam.updateScore(false, points: points)
         }
     }
-    
-    func daoTeam() -> BWDaoTeam {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
-    }
 
-    func loadData(){
+    func initializeView(){
         
         print("*** FirstViewController.loadData")
         
-        let bwTeams = daoTeam().loadData()
+        let bwTeams = self.daoTeam.getTeams()
         
         lbNameT01.text = bwTeams[0].name
         lbPointsT01.text = bwTeams[0].score?.stringValue

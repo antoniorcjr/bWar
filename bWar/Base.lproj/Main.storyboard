@@ -313,7 +313,7 @@
                                 <rect key="frame" x="512" y="720" width="185" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRI-94-Gmt">
-                                <rect key="frame" x="87" y="729" width="74" height="21"/>
+                                <rect key="frame" x="87" y="729" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -325,7 +325,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-nJ-Bxd">
-                                <rect key="frame" x="524" y="729" width="74" height="21"/>
+                                <rect key="frame" x="524" y="729" width="168" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -336,6 +336,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8j-oV-PgS">
+                                <rect key="frame" x="329" y="651" width="57" height="33"/>
+                                <connections>
+                                    <action selector="incrementPoints:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="UOm-Yl-4Q4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-7n-TV2">
+                                <rect key="frame" x="383" y="651" width="57" height="33"/>
+                                <connections>
+                                    <action selector="decrementPoints:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S7g-g6-j2c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -343,6 +355,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backgroundTeam" destination="sQB-Y9-Aii" id="WzR-XC-aoB"/>
+                        <outlet property="lbNameT01" destination="nRI-94-Gmt" id="zWu-Sx-J0h"/>
+                        <outlet property="lbNameT02" destination="l9a-nJ-Bxd" id="aqz-ZG-qbn"/>
+                        <outlet property="lbPointsT01" destination="UXG-xT-jr1" id="KsK-dY-ZFX"/>
+                        <outlet property="lbPointsT02" destination="Ibk-rl-nQp" id="gSC-rH-kDy"/>
                         <outlet property="mimeLabel" destination="hCO-bg-NRi" id="J8Y-QP-Tiq"/>
                         <outlet property="raffleMimeButton" destination="MA9-Ch-DcJ" id="fXW-PL-BxT"/>
                         <outlet property="resetTimeButton" destination="LHa-Ua-eFu" id="JNH-Ff-T7m"/>

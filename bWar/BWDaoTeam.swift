@@ -24,7 +24,7 @@ class BWDaoTeam {
     
     func updateScore(isTeamA: Bool, points: Int){
     
-        print("DAOTeam.updateScore")
+        print("DAOTeam.updateScore isTeamA -> \(isTeamA)")
         
         let fetchRequest = NSFetchRequest(entityName: ENTITY_TEAM)
         
@@ -34,11 +34,15 @@ class BWDaoTeam {
             
             let bwTeams = fetchResults
             
+            print("bwTeams.count --> \(bwTeams.count)")
+            
             if(bwTeams.count > 0)  {
                 
                 let index = ((isTeamA) ? 0 : 1)
                 let bwTeam = bwTeams[index]
                 bwTeam.score = points
+                print("bwTeam.name --> \(bwTeam.name)")
+                print("bwTeam.score --> \(bwTeam.score)")
             }
             
             do {
@@ -54,7 +58,7 @@ class BWDaoTeam {
         
     }
 
-    func loadData() -> [BWTeam]{
+    func getTeams() -> [BWTeam]{
         
         print("*** DaoTeam.loadData")
         
