@@ -18,30 +18,13 @@ class FirstViewController: UIViewController {
     
     let CONST_SCORE = 5
     
-    
-    private var bwTeamA: BWTeam = BWTeam()
-    private var bwTeamB: BWTeam = BWTeam()
-    
-//    required init(coder aDecoder: NSCoder) {
-////        self.bwTeamA = BWTeam()
-////        self.bwTeamB = BWTeam()
-//        super.init(coder: aDecoder)
-//        self.loadData()
-//    }
-    
-    
+//    private var bwTeamA: BWTeam = BWTeam()
+//    private var bwTeamB: BWTeam = BWTeam()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Default Initialization
-//        lbNameT01.text = "Time A"
-//        lbPointsT01.text = "0"
-//        
-//        lbNameT02.text = "Time B"
-//        lbPointsT02.text = "0"
-        
         loadData()
     }
 
@@ -51,34 +34,34 @@ class FirstViewController: UIViewController {
     }
 
     @IBAction func incrementPointsTeam01(sender: AnyObject) {
-        let points: Int? = Int(lbPointsT01.text!)
-        lbPointsT01.text = "\(points! + CONST_SCORE)"
-        self.saveRank(true, points: points! + CONST_SCORE)
+        let points = (Int(lbPointsT01.text!)! + CONST_SCORE)
+        lbPointsT01.text = "\(points)"
+        self.saveRank(true, points: points)
     }
 
     @IBAction func decrementPointsTeam01(sender: AnyObject) {
 
-        let points: Int? = Int(lbPointsT01.text!)
+        let points = (Int(lbPointsT01.text!)! - CONST_SCORE)
         
-        if (points != 0) {
-            lbPointsT01.text = "\(points! - CONST_SCORE)"
-            self.saveRank(true, points: points! - CONST_SCORE)
+        if (points >= 0) {
+            lbPointsT01.text = "\(points)"
+            self.saveRank(true, points: points)
         }
     }
 
     @IBAction func incrementPointsTeam02(sender: AnyObject) {
-        let points: Int? = Int(lbPointsT02.text!)
-        lbPointsT02.text = "\(points! + CONST_SCORE)"
-        self.saveRank(false, points: points! + CONST_SCORE)
+        let points = (Int(lbPointsT02.text!)! + CONST_SCORE)
+        lbPointsT02.text = "\(points)"
+        self.saveRank(false, points: points)
     }
     
     @IBAction func decrementPointsTeam02(sender: AnyObject) {
         
-        let points: Int? = Int(lbPointsT02.text!)
+        let points = (Int(lbPointsT02.text!)! - CONST_SCORE)
         
-        if (points != 0) {
-            lbPointsT02.text = "\(points! - CONST_SCORE)"
-            self.saveRank(false, points: points! - CONST_SCORE)
+        if (points >= 0) {
+            lbPointsT02.text = "\(points)"
+            self.saveRank(false, points: points)
         }
     }
     
@@ -87,6 +70,8 @@ class FirstViewController: UIViewController {
         return appDelegate.managedObjectContext
     }
     
+    
+    // MARK: - Mover p outra classe responsavel pela comunicacao com o BD
     
     func saveRank(isTeamA: Bool, points: Int){
 
@@ -107,22 +92,18 @@ class FirstViewController: UIViewController {
 
             do {
                 try managedObject().save()
-//                let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                delegate.saveContext()
-                print("save Rank")
+//                print("save Rank")
 
             }catch {
-                print("exception save Rank error")
+                print("exception saveRank Exception --> save")
             }
             
         }catch {
-            print("*** saveRank Exception");
+            print("*** saveRank Exception --> executeFetchRequest");
         }
         
     }
 
-    
-    
     func loadData(){
         
         print("*** FirstViewController.loadData")
