@@ -53,7 +53,7 @@ class FirstViewController: UIViewController {
     @IBAction func incrementPointsTeam01(sender: AnyObject) {
         let points: Int? = Int(lbPointsT01.text!)
         lbPointsT01.text = "\(points! + CONST_SCORE)"
-        self.saveRank(true, points: points!)
+        self.saveRank(true, points: points! + CONST_SCORE)
     }
 
     @IBAction func decrementPointsTeam01(sender: AnyObject) {
@@ -62,14 +62,14 @@ class FirstViewController: UIViewController {
         
         if (points != 0) {
             lbPointsT01.text = "\(points! - CONST_SCORE)"
-            self.saveRank(true, points: points!)
+            self.saveRank(true, points: points! - CONST_SCORE)
         }
     }
 
     @IBAction func incrementPointsTeam02(sender: AnyObject) {
         let points: Int? = Int(lbPointsT02.text!)
         lbPointsT02.text = "\(points! + CONST_SCORE)"
-        self.saveRank(false, points: points!)
+        self.saveRank(false, points: points! + CONST_SCORE)
     }
     
     @IBAction func decrementPointsTeam02(sender: AnyObject) {
@@ -78,7 +78,7 @@ class FirstViewController: UIViewController {
         
         if (points != 0) {
             lbPointsT02.text = "\(points! - CONST_SCORE)"
-            self.saveRank(false, points: points!)
+            self.saveRank(false, points: points! - CONST_SCORE)
         }
     }
     
