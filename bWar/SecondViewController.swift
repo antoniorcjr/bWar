@@ -103,8 +103,11 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initializeView()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        initializeView()
     }
 
     override func didReceiveMemoryWarning() {

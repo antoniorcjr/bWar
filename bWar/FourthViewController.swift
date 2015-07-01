@@ -18,8 +18,11 @@ class FourthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeView()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+         initializeView()
     }
     
     override func didReceiveMemoryWarning() {

@@ -27,8 +27,9 @@ class FirstViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Default Initialization
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         initializeView()
     }
 
