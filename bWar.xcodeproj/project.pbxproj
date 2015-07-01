@@ -27,6 +27,7 @@
 		CF856E401B3CA6360062ABC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */; };
 		CF856E421B3CA65D0062ABC6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */; };
 		CFB00FDA1B4433A6007349A3 /* BWDaoTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */; };
+		CFB00FDC1B448773007349A3 /* UtilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB00FDB1B448773007349A3 /* UtilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CFB00FD91B4433A6007349A3 /* BWDaoTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWDaoTeam.swift; sourceTree = "<group>"; };
+		CFB00FDB1B448773007349A3 /* UtilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				A94D13301B3C5998009F3E6B /* SecondViewController.swift */,
 				CF856E3F1B3CA6360062ABC6 /* ThirdViewController.swift */,
 				CF856E411B3CA65D0062ABC6 /* FourthViewController.swift */,
+				CFB00FDB1B448773007349A3 /* UtilViewController.swift */,
 				A44DA9B01B41D5740091D9AD /* advanced_dot_digital-7.ttf */,
 				A94D13321B3C5998009F3E6B /* Main.storyboard */,
 				CFD1A14E1B41074900D35B89 /* Model */,
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB00FDC1B448773007349A3 /* UtilViewController.swift in Sources */,
 				CF0B63411B42298C00A84C97 /* BWJoking+CoreDataProperties.swift in Sources */,
 				CF4134591B4107BF0033686F /* BWImitationGame+CoreDataProperties.swift in Sources */,
 				CF41345D1B4107C00033686F /* BWQuestionGame+CoreDataProperties.swift in Sources */,

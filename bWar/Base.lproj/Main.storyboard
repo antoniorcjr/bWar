@@ -175,7 +175,7 @@
                                 <rect key="frame" x="72" y="720" width="186" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-8O-zds">
-                                <rect key="frame" x="87" y="729" width="74" height="21"/>
+                                <rect key="frame" x="87" y="729" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -190,7 +190,7 @@
                                 <rect key="frame" x="512" y="720" width="185" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-Wd-qZO">
-                                <rect key="frame" x="524" y="729" width="74" height="21"/>
+                                <rect key="frame" x="524" y="729" width="167" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -217,6 +217,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Prenda" image="icoTabBarPrenda" id="dVh-FK-DPa" userLabel="prenda"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="lbNameT01" destination="tK6-8O-zds" id="pYa-BF-eby"/>
+                        <outlet property="lbNameT02" destination="YBg-Wd-qZO" id="nhE-OE-Q4N"/>
+                        <outlet property="lbPointsT01" destination="DgF-Ce-2ce" id="ZNP-uv-8d5"/>
+                        <outlet property="lbPointsT02" destination="L38-65-dOd" id="kZZ-9V-aRj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQJ-Ce-LtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,7 +441,7 @@
                                 <rect key="frame" x="72" y="720" width="186" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-IK-eax">
-                                <rect key="frame" x="87" y="729" width="74" height="21"/>
+                                <rect key="frame" x="87" y="729" width="162" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -450,7 +456,7 @@
                                 <rect key="frame" x="512" y="720" width="185" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C15-ht-FpQ">
-                                <rect key="frame" x="524" y="729" width="74" height="21"/>
+                                <rect key="frame" x="524" y="729" width="167" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -476,6 +482,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perguntas" image="icoTabBarPerguntas" id="J6p-mU-8fa" userLabel="pergunta"/>
+                    <connections>
+                        <outlet property="lbNameT01" destination="Gh7-IK-eax" id="Bp2-gl-PZ4"/>
+                        <outlet property="lbNameT02" destination="C15-ht-FpQ" id="vUy-FO-MZW"/>
+                        <outlet property="lbPointsT01" destination="JYo-D7-J8L" id="yPG-W5-Z0P"/>
+                        <outlet property="lbPointsT02" destination="PaV-f7-inB" id="9gC-PB-BiC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhQ-zT-vP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

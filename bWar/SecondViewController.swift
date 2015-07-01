@@ -32,11 +32,6 @@ class SecondViewController: UIViewController {
     var clock: NSTimer?
     var counting: Bool = false
     
-    let CONST_SCORE = 5
-    
-    lazy var daoTeam: BWDaoTeam = {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
-        }()
 
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex {
@@ -118,59 +113,21 @@ class SecondViewController: UIViewController {
     }
     
     func initializeView(){
-        
         print("*** SecondViewController.initializeView")
-        
-        let bwTeams = self.daoTeam.getTeams()
-        
-        lbNameT01.text = bwTeams[0].name
-        lbPointsT01.text = bwTeams[0].score?.stringValue
-        
-        lbNameT02.text = bwTeams[1].name
-        lbPointsT02.text = bwTeams[1].score?.stringValue
+        UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
+            lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
     }
     
     @IBAction func incrementPoints(sender: AnyObject) {
-        
         let isTeamA = (segmentControl.selectedSegmentIndex == 0)
-        var points = 0
-        
-        print("SecondView.incrementPoints isTeamA -->\(isTeamA)")
-        
-        if (isTeamA) {
-            points = (Int(lbPointsT01.text!)! + CONST_SCORE)
-            lbPointsT01.text = "\(points)"
-            
-        } else {
-            points = (Int(lbPointsT02.text!)! + CONST_SCORE)
-            lbPointsT02.text = "\(points)"
-        }
-        
-        self.daoTeam.updateScore(isTeamA, points: points)
+        UtilViewController().incrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }
     
     // TODO: codigo comentado pois nao acontece nada se errar,
     // o codigo anterior retirava ponto
     @IBAction func decrementPoints(sender: AnyObject) {
-        
-        let isTeamA = (segmentControl.selectedSegmentIndex == 0)
-//        var points = 0
-        
-        print("SecondView.decrementPoints isTeamA -->\(isTeamA)")
-        
-//        if (points >= 0) {
-//            
-//            if (isTeamA) {
-//                points = (Int(lbPointsT01.text!)! - CONST_SCORE)
-//                lbPointsT01.text = "\(points)"
-//                
-//            } else {
-//                points = (Int(lbPointsT02.text!)! - CONST_SCORE)
-//                lbPointsT02.text = "\(points)"
-//            }
-//            
-//            self.daoTeam.updateScore(isTeamA, points: points)
-//        }
+//        let isTeamA = (segmentControl.selectedSegmentIndex == 0)
+//        UtilViewController().decrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }
 }
 
