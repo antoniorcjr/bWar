@@ -32,6 +32,10 @@ class SecondViewController: UIViewController {
     var clock: NSTimer?
     var counting: Bool = false
     
+    lazy var daoTeam: BWDaoTeam = {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
+        }()
+    
 
     @IBAction func indexChanged(sender: AnyObject) {
         switch segmentControl.selectedSegmentIndex {
@@ -98,7 +102,13 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func raffleMime(sender: AnyObject) {
-        mimeLabel.text = "Mímica sorteada"
+        
+        let imitations = daoTeam.getImitations()
+        let randomNumber = Int(arc4random_uniform(8))
+        
+        print("raffleMime randon -> \(randomNumber)")
+        
+        mimeLabel.text = imitations[randomNumber].imitation
     }
     
     override func viewDidLoad() {
