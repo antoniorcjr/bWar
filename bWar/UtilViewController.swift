@@ -26,9 +26,10 @@ class UtilViewController {
         
         lbNameT01.text = bwTeams[0].name
         lbPointsT01.text = bwTeams[0].score?.stringValue
-        
+
         lbNameT02.text = bwTeams[1].name
         lbPointsT02.text = bwTeams[1].score?.stringValue
+            
     }
     
     func incrementPoints(lbPoints: UILabel, isTeamA: Bool) {

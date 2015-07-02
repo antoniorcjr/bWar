@@ -81,14 +81,7 @@ class BWDaoTeam {
             print("DaoTeam.loadData bwTeams.count--> \(bwTeams.count)")
             
             if(bwTeams.count > 0)  {
-                
-//                let bwTeam01 = bwTeams[0]
-//                let bwTeam02 = bwTeams[1]
-//                
-//                print("*** DaoTeam.loadData team 01 -> \(bwTeam01.name)")
-//                print("*** DaoTeam.loadData team 02 -> \(bwTeam02.name)")
-
-                return bwTeams//[bwTeam01, bwTeam02]
+                return bwTeams
             }
             
         }catch {
