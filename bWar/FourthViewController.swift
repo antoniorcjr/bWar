@@ -12,6 +12,8 @@ class FourthViewController: UIViewController {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var background: UIImageView!
+
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var lbAnswer: UILabel!
     
@@ -21,6 +23,21 @@ class FourthViewController: UIViewController {
     @IBOutlet weak var lbNameT02: UILabel!
     @IBOutlet weak var lbPointsT02: UILabel!
     
+    @IBOutlet weak var okButton: UIButton!
+
+    @IBOutlet weak var noButton: UIButton!
+
+    @IBAction func indexChanged(sender: AnyObject) {
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            background.image = UIImage(named: "bgAzul")
+        case 1:
+            background.image = UIImage(named: "bgVermelho")
+        default:
+            break;
+        }
+    }
+
     lazy var daoTeam: BWDaoTeam = {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
         }()
@@ -35,6 +52,9 @@ class FourthViewController: UIViewController {
     }
     
     @IBAction func raffleQuestion(sender: AnyObject) {
+        okButton.enabled = true
+        noButton.enabled = true
+
         print("raffleQuestion")
         let questions = daoTeam.getQuestions()
         let randomNumber = Int(arc4random_uniform(21))
@@ -65,6 +85,9 @@ class FourthViewController: UIViewController {
     }
 
     @IBAction func incrementPoints(sender: AnyObject) {
+        okButton.enabled = false
+        noButton.enabled = false
+
         let isTeamA = (segmentControl.selectedSegmentIndex == 0)
         UtilViewController().incrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }
@@ -72,6 +95,9 @@ class FourthViewController: UIViewController {
     // TODO: codigo comentado pois nao acontece nada se errar,
     // o codigo anterior retirava ponto
     @IBAction func decrementPoints(sender: AnyObject) {
+        okButton.enabled = false
+        noButton.enabled = false
+
         //        let isTeamA = (segmentControl.selectedSegmentIndex == 0)
         //        UtilViewController().decrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }

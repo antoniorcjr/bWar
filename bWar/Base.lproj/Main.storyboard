@@ -396,24 +396,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgAzul" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-Df-JKV">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marcadorRelogio" translatesAutoresizingMaskIntoConstraints="NO" id="4Ki-8g-djP">
-                                <rect key="frame" x="291" y="113" width="129" height="49"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="botContadorRelogio" translatesAutoresizingMaskIntoConstraints="NO" id="Oyu-QO-ZOk">
-                                <rect key="frame" x="416" y="113" width="62" height="49"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCb-cS-6Wv">
-                                <rect key="frame" x="303" y="127" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="botCerto" translatesAutoresizingMaskIntoConstraints="NO" id="P4h-Ux-gYL">
-                                <rect key="frame" x="329" y="651" width="57" height="33"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="botErrado" translatesAutoresizingMaskIntoConstraints="NO" id="GPe-PJ-8Ah">
-                                <rect key="frame" x="383" y="651" width="57" height="33"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gI8-s5-2ha" userLabel="btCorreto">
+                                <rect key="frame" x="328" y="651" width="57" height="33"/>
+                                <state key="normal" title="Button" image="botCerto"/>
+                                <connections>
+                                    <action selector="incrementPoints:" destination="u0l-Rs-Tbh" eventType="touchUpInside" id="mmR-5F-VL3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-0N-BPC" userLabel="btErrado">
+                                <rect key="frame" x="386" y="651" width="57" height="33"/>
+                                <state key="normal" title="Button" image="botErrado"/>
+                                <connections>
+                                    <action selector="decrementPoints:" destination="u0l-Rs-Tbh" eventType="touchUpInside" id="SqW-z2-44r"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placarCinza" translatesAutoresizingMaskIntoConstraints="NO" id="HfX-kV-GEV">
                                 <rect key="frame" x="21" y="158" width="727" height="494"/>
                             </imageView>
@@ -425,6 +421,7 @@
                                 </segments>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <action selector="indexChanged:" destination="u0l-Rs-Tbh" eventType="valueChanged" id="OK0-Fu-kQz"/>
                                     <action selector="indexChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="P17-hq-FZL"/>
                                 </connections>
                             </segmentedControl>
@@ -498,12 +495,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Perguntas" image="icoTabBarPerguntas" id="J6p-mU-8fa" userLabel="pergunta"/>
                     <connections>
+                        <outlet property="background" destination="2y8-Df-JKV" id="oDn-SY-Ugq"/>
                         <outlet property="lbAnswer" destination="7z5-Gf-cU4" id="0J2-dN-FWh"/>
                         <outlet property="lbNameT01" destination="Gh7-IK-eax" id="Bp2-gl-PZ4"/>
                         <outlet property="lbNameT02" destination="C15-ht-FpQ" id="vUy-FO-MZW"/>
                         <outlet property="lbPointsT01" destination="JYo-D7-J8L" id="yPG-W5-Z0P"/>
                         <outlet property="lbPointsT02" destination="PaV-f7-inB" id="9gC-PB-BiC"/>
                         <outlet property="lbQuestion" destination="ueR-Mb-mNT" id="DqB-V2-uE2"/>
+                        <outlet property="noButton" destination="6hu-0N-BPC" id="Lh6-hN-ZkT"/>
+                        <outlet property="okButton" destination="gI8-s5-2ha" id="XHy-8N-dT4"/>
                         <outlet property="segmentControl" destination="M1J-KX-hgD" id="gjZ-Ye-2cR"/>
                     </connections>
                 </viewController>
