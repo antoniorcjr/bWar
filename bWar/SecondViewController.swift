@@ -26,6 +26,7 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var lbNameT01: UILabel!
     @IBOutlet weak var lbNameT02: UILabel!
+    @IBOutlet weak var lbTopic: UILabel!
     
     @IBOutlet weak var raffleMimeButton: UIButton!
     var timer: NSInteger = 60
@@ -104,11 +105,12 @@ class SecondViewController: UIViewController {
     @IBAction func raffleMime(sender: AnyObject) {
         
         let imitations = daoTeam.getImitations()
-        let randomNumber = Int(arc4random_uniform(8))
+        let randomNumber = Int(arc4random_uniform(29))
         
         print("raffleMime randon -> \(randomNumber)")
         
         mimeLabel.text = imitations[randomNumber].imitation
+        lbTopic.text = imitations[randomNumber].topic
     }
     
     override func viewDidLoad() {

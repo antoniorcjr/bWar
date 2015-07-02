@@ -307,8 +307,8 @@
                                     <action selector="raffleMime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Efi-gE-gBw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PALAVRA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-bg-NRi">
-                                <rect key="frame" x="72" y="381" width="625" height="123"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-bg-NRi">
+                                <rect key="frame" x="72" y="282" width="625" height="277"/>
                                 <fontDescription key="fontDescription" name="AdvancedDotDigital-7" family="Advanced Dot Digital-7" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -355,6 +355,12 @@
                                     <action selector="decrementPoints:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S7g-g6-j2c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byy-Yf-Xlr">
+                                <rect key="frame" x="66" y="577" width="631" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -366,6 +372,7 @@
                         <outlet property="lbNameT02" destination="l9a-nJ-Bxd" id="aqz-ZG-qbn"/>
                         <outlet property="lbPointsT01" destination="UXG-xT-jr1" id="KsK-dY-ZFX"/>
                         <outlet property="lbPointsT02" destination="Ibk-rl-nQp" id="gSC-rH-kDy"/>
+                        <outlet property="lbTopic" destination="byy-Yf-Xlr" id="Qix-rI-Ehh"/>
                         <outlet property="mimeLabel" destination="hCO-bg-NRi" id="J8Y-QP-Tiq"/>
                         <outlet property="raffleMimeButton" destination="MA9-Ch-DcJ" id="fXW-PL-BxT"/>
                         <outlet property="resetTimeButton" destination="LHa-Ua-eFu" id="JNH-Ff-T7m"/>
