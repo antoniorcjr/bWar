@@ -42,6 +42,8 @@ class ThirdViewController: UIViewController {
         print("*** ThirdViewController.initializeView")
         UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
             lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
+        
+        lbJoking.text = "?"
     }
     
     @IBAction func raffleJoking(sender: AnyObject) {
