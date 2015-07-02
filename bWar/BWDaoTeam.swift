@@ -97,7 +97,6 @@ class BWDaoTeam {
         return []
     }
     
-    
     func getImitations() -> [BWImitationGame]{
         
         print("*** DaoTeam.getImitations")
@@ -117,20 +116,40 @@ class BWDaoTeam {
             print("DaoTeam.getImitations bwImitations.count--> \(bwImitations.count)")
             
             if(bwImitations.count > 0)  {
-                
                 return bwImitations
-                
-//                let bwImitation01 = bwImitations[0]
-//                let bwImitation02 = bwImitations[1]
-//                
-//                print("*** DaoTeam.loadData team 01 -> \(bwImitation01.imitation) --  \(bwImitation01.topic)")
-//                print("*** DaoTeam.loadData team 02 -> \(bwImitation02.imitation) --  \(bwImitation02.topic)")
-//                
-//                return [bwImitation01, bwImitation02]
             }
             
         }catch {
             print("*** DaoTeam.getImitations Exception");
+        }
+        
+        return []
+    }
+    
+    func getJokings() -> [BWJoking]{
+        
+        print("*** DaoTeam.getImitations")
+        
+        let entityDescritpion = NSEntityDescription.entityForName(ENTITY_JOKING_GAME,
+            inManagedObjectContext: self.managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: ENTITY_JOKING_GAME)
+        fetchRequest.entity = entityDescritpion
+        
+        do {
+            
+            let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! [BWJoking]
+            
+            let bwJokings = fetchResults
+            
+            print("DaoTeam.getJokings bwImitations.count--> \(bwJokings.count)")
+            
+            if(bwJokings.count > 0)  {
+                return bwJokings
+            }
+            
+        }catch {
+            print("*** DaoTeam.getJokings Exception");
         }
         
         return []
@@ -357,7 +376,7 @@ class BWDaoTeam {
         let eImitation29 = NSEntityDescription.entityForName(ENTITY_IMITATION_GAME, inManagedObjectContext: managedObjectContext)
         let imitation29 = NSManagedObject(entity: eImitation29!, insertIntoManagedObjectContext: managedObjectContext)
         imitation29.setValue(29, forKey: "id")
-        imitation29.setValue("\"Sabe de nada, inocente\" (Propagandas BomNegócio.com! )", forKey: "imitation")
+        imitation29.setValue("\"Sabe de nada, inocente\" (BomNegócio.com)", forKey: "imitation")
         imitation29.setValue("Virais", forKey: "topic")
         
         // JOKING GAME

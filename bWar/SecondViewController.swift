@@ -101,13 +101,12 @@ class SecondViewController: UIViewController {
 
     }
     
-    
     @IBAction func raffleMime(sender: AnyObject) {
         
         let imitations = daoTeam.getImitations()
         let randomNumber = Int(arc4random_uniform(29))
         
-        print("raffleMime randon -> \(randomNumber)")
+        print("imitation random -> \(randomNumber)")
         
         mimeLabel.text = imitations[randomNumber].imitation
         lbTopic.text = imitations[randomNumber].topic

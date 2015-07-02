@@ -165,9 +165,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto da prenda descrito aqui!!!!!!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-hg-v5i">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-hg-v5i">
                                 <rect key="frame" x="73" y="266" width="618" height="330"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -209,7 +209,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="raffleMime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="N1M-vl-dUf"/>
+                                    <action selector="raffleJoking:" destination="wdO-Eb-hIE" eventType="touchUpInside" id="Ohr-FE-hc2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,6 +218,7 @@
                     <tabBarItem key="tabBarItem" title="Prenda" image="icoTabBarPrenda" id="dVh-FK-DPa" userLabel="prenda"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="lbJoking" destination="v8v-hg-v5i" id="LBg-ot-wNa"/>
                         <outlet property="lbNameT01" destination="tK6-8O-zds" id="pYa-BF-eby"/>
                         <outlet property="lbNameT02" destination="YBg-Wd-qZO" id="nhE-OE-Q4N"/>
                         <outlet property="lbPointsT01" destination="DgF-Ce-2ce" id="ZNP-uv-8d5"/>
@@ -439,9 +440,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Perguntas aqui !!!!!!!!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Mb-mNT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Mb-mNT">
                                 <rect key="frame" x="73" y="266" width="618" height="330"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -482,9 +483,6 @@
                                 <state key="normal" title="SORTEAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="raffleMime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="K0t-fL-OwQ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
