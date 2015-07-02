@@ -137,6 +137,9 @@ class SecondViewController: UIViewController {
         print("*** SecondViewController.initializeView")
         UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
             lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
+        
+        mimeLabel.text = "?"
+        lbTopic.text = "?"
     }
     
     @IBAction func incrementPoints(sender: AnyObject) {

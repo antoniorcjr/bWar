@@ -12,6 +12,9 @@ class FourthViewController: UIViewController {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var lbQuestion: UILabel!
+    @IBOutlet weak var lbAnswer: UILabel!
+    
     @IBOutlet weak var lbNameT01: UILabel!
     @IBOutlet weak var lbPointsT01: UILabel!
     
@@ -31,6 +34,18 @@ class FourthViewController: UIViewController {
          initializeView()
     }
     
+    @IBAction func raffleQuestion(sender: AnyObject) {
+        print("raffleQuestion")
+        let questions = daoTeam.getQuestions()
+        let randomNumber = Int(arc4random_uniform(21))
+        
+        print("question random -> \(randomNumber)")
+        
+        lbQuestion.text = questions[randomNumber].question
+        lbAnswer.text = questions[randomNumber].answer
+        lbAnswer.hidden = true;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +55,13 @@ class FourthViewController: UIViewController {
         print("*** FourthViewController.initializeView")
         UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
             lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
+        
+        lbQuestion.text = "?"
+        lbAnswer.text = "?"
+        lbAnswer.hidden = true;
+    }
+    @IBAction func showAnswer(sender: AnyObject) {
+        lbAnswer.hidden = false;
     }
 
     @IBAction func incrementPoints(sender: AnyObject) {

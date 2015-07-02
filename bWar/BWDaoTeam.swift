@@ -14,6 +14,7 @@ class BWDaoTeam {
     let ENTITY_TEAM = "BWTeam"
     let ENTITY_IMITATION_GAME = "BWImitationGame"
     let ENTITY_JOKING_GAME = "BWJoking"
+    let ENTITY_QUESTION_GAME = "BWQuestionGame"
     
     let NAME_TEAM_A = "The Blues"
     let NAME_TEAM_B = "The Reds"
@@ -80,14 +81,7 @@ class BWDaoTeam {
             print("DaoTeam.loadData bwTeams.count--> \(bwTeams.count)")
             
             if(bwTeams.count > 0)  {
-                
-//                let bwTeam01 = bwTeams[0]
-//                let bwTeam02 = bwTeams[1]
-//                
-//                print("*** DaoTeam.loadData team 01 -> \(bwTeam01.name)")
-//                print("*** DaoTeam.loadData team 02 -> \(bwTeam02.name)")
-
-                return bwTeams//[bwTeam01, bwTeam02]
+                return bwTeams
             }
             
         }catch {
@@ -128,7 +122,7 @@ class BWDaoTeam {
     
     func getJokings() -> [BWJoking]{
         
-        print("*** DaoTeam.getImitations")
+        print("*** DaoTeam.getJokings")
         
         let entityDescritpion = NSEntityDescription.entityForName(ENTITY_JOKING_GAME,
             inManagedObjectContext: self.managedObjectContext)
@@ -154,6 +148,36 @@ class BWDaoTeam {
         
         return []
     }
+    
+    func getQuestions() -> [BWQuestionGame]{
+        
+        print("*** DaoTeam.getQuestions")
+        
+        let entityDescritpion = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME,
+            inManagedObjectContext: self.managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: ENTITY_QUESTION_GAME)
+        fetchRequest.entity = entityDescritpion
+        
+        do {
+            
+            let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! [BWQuestionGame]
+            
+            let bwQuestions = fetchResults
+            
+            print("DaoTeam.getQuestions bwQuestions.count--> \(bwQuestions.count)")
+            
+            if(bwQuestions.count > 0)  {
+                return bwQuestions
+            }
+            
+        }catch {
+            print("*** DaoTeam.getQuestions Exception");
+        }
+        
+        return []
+    }
+
 
     //TODO: retirar isso, vê metodo da API pra fazer isso (hasBD?)
     func hasDataBase()->Bool{
@@ -431,10 +455,154 @@ class BWDaoTeam {
         joking10.setValue(10, forKey: "id")
         joking10.setValue("Dançar YMCA", forKey: "joking")
         
-//        let eJoking11 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
-//        let joking11 = NSManagedObject(entity: eJoking11!, insertIntoManagedObjectContext: managedObjectContext)
-//        joking11.setValue(11, forKey: "id")
-//        joking11.setValue("", forKey: "joking")
+        let eJoking11 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking11 = NSManagedObject(entity: eJoking11!, insertIntoManagedObjectContext: managedObjectContext)
+        joking11.setValue(11, forKey: "id")
+        joking11.setValue("Imite alguém do BEPiD", forKey: "joking")
+        
+        let eJoking12 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking12 = NSManagedObject(entity: eJoking12!, insertIntoManagedObjectContext: managedObjectContext)
+        joking12.setValue(12, forKey: "id")
+        joking12.setValue("Limpar o sapato/chinelo de cada membro da equipe adversária", forKey: "joking")
+        
+        let eJoking13 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking13 = NSManagedObject(entity: eJoking13!, insertIntoManagedObjectContext: managedObjectContext)
+        joking13.setValue(13, forKey: "id")
+        joking13.setValue("Conte uma piada em inglês", forKey: "joking")
+        
+        let eJoking14 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking14 = NSManagedObject(entity: eJoking14!, insertIntoManagedObjectContext: managedObjectContext)
+        joking14.setValue(14, forKey: "id")
+        joking14.setValue("Falar o quanto ama o BEPiD com rimas", forKey: "joking")
+        
+        
+        // QUESTIONS AND ANSWERS
+        
+        let eQA01 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa01 = NSManagedObject(entity: eQA01!, insertIntoManagedObjectContext: managedObjectContext)
+        qa01.setValue(1, forKey: "id")
+        qa01.setValue("Qual o nome da nova versão do sistema operacional do Mac?", forKey: "question")
+        qa01.setValue("El Capitan", forKey: "answer")
+        
+        let eQA02 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa02 = NSManagedObject(entity: eQA02!, insertIntoManagedObjectContext: managedObjectContext)
+        qa02.setValue(2, forKey: "id")
+        qa02.setValue("Em que ano a Apple foi fundada?", forKey: "question")
+        qa02.setValue("1976", forKey: "answer")
+        
+        let eQA03 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa03 = NSManagedObject(entity: eQA03!, insertIntoManagedObjectContext: managedObjectContext)
+        qa03.setValue(3, forKey: "id")
+        qa03.setValue("Em que data começou o BEPiD Manaus?", forKey: "question")
+        qa03.setValue("16 de Março de 2015", forKey: "answer")
+        
+        let eQA04 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa04 = NSManagedObject(entity: eQA04!, insertIntoManagedObjectContext: managedObjectContext)
+        qa04.setValue(4, forKey: "id")
+        qa04.setValue("O que significa BEPiD?", forKey: "question")
+        qa04.setValue("Braziliand Education Program for iOS Development", forKey: "answer")
+        
+        let eQA05 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa05 = NSManagedObject(entity: eQA05!, insertIntoManagedObjectContext: managedObjectContext)
+        qa05.setValue(5, forKey: "id")
+        qa05.setValue("Quem ministrou a palestra sobre \"Padrão Apple de Apresentação\"?", forKey: "question")
+        qa05.setValue("Bill", forKey: "answer")
+        
+        let eQA06 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa06 = NSManagedObject(entity: eQA06!, insertIntoManagedObjectContext: managedObjectContext)
+        qa06.setValue(6, forKey: "id")
+        qa06.setValue("Qual o nome do 3º filme da primeira trilogia de Star Wars?", forKey: "question")
+        qa06.setValue("O retorno de Jedi", forKey: "answer")
+        
+        let eQA07 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa07 = NSManagedObject(entity: eQA07!, insertIntoManagedObjectContext: managedObjectContext)
+        qa07.setValue(7, forKey: "id")
+        qa07.setValue("Qual o nome do primeiro filme de Senhor dos Anéis?", forKey: "question")
+        qa07.setValue("A sociedade do anel", forKey: "answer")
+        
+        let eQA08 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa08 = NSManagedObject(entity: eQA08!, insertIntoManagedObjectContext: managedObjectContext)
+        qa08.setValue(8, forKey: "id")
+        qa08.setValue("Qual o nome do atual presidente da Apple?", forKey: "question")
+        qa08.setValue("Tim Cook", forKey: "answer")
+        
+        let eQA09 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa09 = NSManagedObject(entity: eQA09!, insertIntoManagedObjectContext: managedObjectContext)
+        qa09.setValue(9, forKey: "id")
+        qa09.setValue("Qual a banda preferida do Max?", forKey: "question")
+        qa09.setValue("Bad Religion", forKey: "answer")
+        
+        let eQA10 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa10 = NSManagedObject(entity: eQA10!, insertIntoManagedObjectContext: managedObjectContext)
+        qa10.setValue(10, forKey: "id")
+        qa10.setValue("Qual o esporte o Antonio pratica?", forKey: "question")
+        qa10.setValue("Rugby", forKey: "answer")
+        
+        let eQA11 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa11 = NSManagedObject(entity: eQA11!, insertIntoManagedObjectContext: managedObjectContext)
+        qa11.setValue(11, forKey: "id")
+        qa11.setValue("Quem do BEPiD vai casar esse ano?", forKey: "question")
+        qa11.setValue("Adriana", forKey: "answer")
+        
+        let eQA12 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa12 = NSManagedObject(entity: eQA12!, insertIntoManagedObjectContext: managedObjectContext)
+        qa12.setValue(12, forKey: "id")
+        qa12.setValue("Qual a formação de graduação do Vilar?", forKey: "question")
+        qa12.setValue("Engenharia Civil", forKey: "answer")
+        
+        let eQA13 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa13 = NSManagedObject(entity: eQA13!, insertIntoManagedObjectContext: managedObjectContext)
+        qa13.setValue(13, forKey: "id")
+        qa13.setValue("Qual a naturalidade do Guto?", forKey: "question")
+        qa13.setValue("Parintins", forKey: "answer")
+        
+        let eQA14 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa14 = NSManagedObject(entity: eQA14!, insertIntoManagedObjectContext: managedObjectContext)
+        qa14.setValue(14, forKey: "id")
+        qa14.setValue("Onde o Steve Jobs nasceu?", forKey: "question")
+        qa14.setValue("São Francisco", forKey: "answer")
+        
+        let eQA15 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa15 = NSManagedObject(entity: eQA15!, insertIntoManagedObjectContext: managedObjectContext)
+        qa15.setValue(15, forKey: "id")
+        qa15.setValue("Qual empresa além da Apple Steve Jobs foi diretor executivo?", forKey: "question")
+        qa15.setValue("Pixar", forKey: "answer")
+        
+        let eQA16 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa16 = NSManagedObject(entity: eQA16!, insertIntoManagedObjectContext: managedObjectContext)
+        qa16.setValue(16, forKey: "id")
+        qa16.setValue("Qual o nome do criador de Start Wars?", forKey: "question")
+        qa16.setValue("George Lucas", forKey: "answer")
+        
+        let eQA17 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa17 = NSManagedObject(entity: eQA17!, insertIntoManagedObjectContext: managedObjectContext)
+        qa17.setValue(17, forKey: "id")
+        qa17.setValue("Qual slogan (famoso) a Apple usou em 1997?", forKey: "question")
+        qa17.setValue("Think different", forKey: "answer")
+        
+        let eQA18 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa18 = NSManagedObject(entity: eQA18!, insertIntoManagedObjectContext: managedObjectContext)
+        qa18.setValue(18, forKey: "id")
+        qa18.setValue("Qual o significado do NS utilizado em algumas classes do Objective-C?", forKey: "question")
+        qa18.setValue("Next Step", forKey: "answer")
+        
+        let eQA19 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa19 = NSManagedObject(entity: eQA19!, insertIntoManagedObjectContext: managedObjectContext)
+        qa19.setValue(19, forKey: "id")
+        qa19.setValue("Cite três anúncios feitos no keynote do WWDC", forKey: "question")
+        qa19.setValue("WatchOS2, El Capitan, iOS9, Apple Music, Swift 2.0 ", forKey: "answer")
+        
+        let eQA20 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa20 = NSManagedObject(entity: eQA20!, insertIntoManagedObjectContext: managedObjectContext)
+        qa20.setValue(20, forKey: "id")
+        qa20.setValue("Qual o dia da toalha?", forKey: "question")
+        qa20.setValue("25 de maio", forKey: "answer")
+        
+        let eQA21 = NSEntityDescription.entityForName(ENTITY_QUESTION_GAME, inManagedObjectContext: managedObjectContext)
+        let qa21 = NSManagedObject(entity: eQA21!, insertIntoManagedObjectContext: managedObjectContext)
+        qa21.setValue(21, forKey: "id")
+        qa21.setValue("Cite 5 cidades nas quais cidades existe o BEPiD", forKey: "question")
+        qa21.setValue("Manaus, Fortaleza, Recife, Campinas, São Paulo, Rio de Janeiro, Porto Alegre, Curitiba e Brasília", forKey: "answer")
 
         do {
             try

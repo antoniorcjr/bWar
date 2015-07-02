@@ -435,7 +435,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Mb-mNT">
-                                <rect key="frame" x="73" y="266" width="618" height="330"/>
+                                <rect key="frame" x="73" y="266" width="618" height="223"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -477,16 +477,33 @@
                                 <state key="normal" title="SORTEAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="raffleQuestion:" destination="u0l-Rs-Tbh" eventType="touchUpInside" id="2l2-N7-zzi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z5-Gf-cU4">
+                                <rect key="frame" x="72" y="518" width="625" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-g9-sbu">
+                                <rect key="frame" x="669" y="266" width="22" height="22"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="u0l-Rs-Tbh" eventType="touchUpInside" id="a2K-O0-NnX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perguntas" image="icoTabBarPerguntas" id="J6p-mU-8fa" userLabel="pergunta"/>
                     <connections>
+                        <outlet property="lbAnswer" destination="7z5-Gf-cU4" id="0J2-dN-FWh"/>
                         <outlet property="lbNameT01" destination="Gh7-IK-eax" id="Bp2-gl-PZ4"/>
                         <outlet property="lbNameT02" destination="C15-ht-FpQ" id="vUy-FO-MZW"/>
                         <outlet property="lbPointsT01" destination="JYo-D7-J8L" id="yPG-W5-Z0P"/>
                         <outlet property="lbPointsT02" destination="PaV-f7-inB" id="9gC-PB-BiC"/>
+                        <outlet property="lbQuestion" destination="ueR-Mb-mNT" id="DqB-V2-uE2"/>
                         <outlet property="segmentControl" destination="M1J-KX-hgD" id="gjZ-Ye-2cR"/>
                     </connections>
                 </viewController>
