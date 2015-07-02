@@ -13,6 +13,8 @@ class BWDaoTeam {
     
     let ENTITY_TEAM = "BWTeam"
     let ENTITY_IMITATION_GAME = "BWImitationGame"
+    let ENTITY_JOKING_GAME = "BWJoking"
+    
     let NAME_TEAM_A = "The Blues"
     let NAME_TEAM_B = "The Reds"
     
@@ -95,7 +97,6 @@ class BWDaoTeam {
         return []
     }
     
-    
     func getImitations() -> [BWImitationGame]{
         
         print("*** DaoTeam.getImitations")
@@ -115,20 +116,40 @@ class BWDaoTeam {
             print("DaoTeam.getImitations bwImitations.count--> \(bwImitations.count)")
             
             if(bwImitations.count > 0)  {
-                
                 return bwImitations
-                
-//                let bwImitation01 = bwImitations[0]
-//                let bwImitation02 = bwImitations[1]
-//                
-//                print("*** DaoTeam.loadData team 01 -> \(bwImitation01.imitation) --  \(bwImitation01.topic)")
-//                print("*** DaoTeam.loadData team 02 -> \(bwImitation02.imitation) --  \(bwImitation02.topic)")
-//                
-//                return [bwImitation01, bwImitation02]
             }
             
         }catch {
             print("*** DaoTeam.getImitations Exception");
+        }
+        
+        return []
+    }
+    
+    func getJokings() -> [BWJoking]{
+        
+        print("*** DaoTeam.getImitations")
+        
+        let entityDescritpion = NSEntityDescription.entityForName(ENTITY_JOKING_GAME,
+            inManagedObjectContext: self.managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: ENTITY_JOKING_GAME)
+        fetchRequest.entity = entityDescritpion
+        
+        do {
+            
+            let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! [BWJoking]
+            
+            let bwJokings = fetchResults
+            
+            print("DaoTeam.getJokings bwImitations.count--> \(bwJokings.count)")
+            
+            if(bwJokings.count > 0)  {
+                return bwJokings
+            }
+            
+        }catch {
+            print("*** DaoTeam.getJokings Exception");
         }
         
         return []
@@ -355,8 +376,65 @@ class BWDaoTeam {
         let eImitation29 = NSEntityDescription.entityForName(ENTITY_IMITATION_GAME, inManagedObjectContext: managedObjectContext)
         let imitation29 = NSManagedObject(entity: eImitation29!, insertIntoManagedObjectContext: managedObjectContext)
         imitation29.setValue(29, forKey: "id")
-        imitation29.setValue("\"Sabe de nada, inocente\" (Propagandas BomNegócio.com! )", forKey: "imitation")
+        imitation29.setValue("\"Sabe de nada, inocente\" (BomNegócio.com)", forKey: "imitation")
         imitation29.setValue("Virais", forKey: "topic")
+        
+        // JOKING GAME
+        
+        let eJoking01 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking01 = NSManagedObject(entity: eJoking01!, insertIntoManagedObjectContext: managedObjectContext)
+        joking01.setValue(1, forKey: "id")
+        joking01.setValue("Imitar uma galinha de uma perna só chocando um ovo", forKey: "joking")
+        
+        let eJoking02 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking02 = NSManagedObject(entity: eJoking02!, insertIntoManagedObjectContext: managedObjectContext)
+        joking02.setValue(2, forKey: "id")
+        joking02.setValue("Dançar É o Tchan", forKey: "joking")
+        
+        let eJoking03 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking03 = NSManagedObject(entity: eJoking03!, insertIntoManagedObjectContext: managedObjectContext)
+        joking03.setValue(3, forKey: "id")
+        joking03.setValue("Imitar o Antonio celebrando uma missa", forKey: "joking")
+        
+        let eJoking04 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking04 = NSManagedObject(entity: eJoking04!, insertIntoManagedObjectContext: managedObjectContext)
+        joking04.setValue(4, forKey: "id")
+        joking04.setValue("Imitar o Guto dançando a música Vermelho", forKey: "joking")
+        
+        let eJoking05 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking05 = NSManagedObject(entity: eJoking05!, insertIntoManagedObjectContext: managedObjectContext)
+        joking05.setValue(5, forKey: "id")
+        joking05.setValue("Imitar o Max dançando eguinha pocotó", forKey: "joking")
+        
+        let eJoking06 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking06 = NSManagedObject(entity: eJoking06!, insertIntoManagedObjectContext: managedObjectContext)
+        joking06.setValue(6, forKey: "id")
+        joking06.setValue("Dançar Billie Jean Michael Jackson", forKey: "joking")
+        
+        let eJoking07 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking07 = NSManagedObject(entity: eJoking07!, insertIntoManagedObjectContext: managedObjectContext)
+        joking07.setValue(7, forKey: "id")
+        joking07.setValue("Declamar soneto da fidelidade em ritmo de funk", forKey: "joking")
+        
+        let eJoking08 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking08 = NSManagedObject(entity: eJoking08!, insertIntoManagedObjectContext: managedObjectContext)
+        joking08.setValue(8, forKey: "id")
+        joking08.setValue("Dançar Florentina (Tiririca)", forKey: "joking")
+        
+        let eJoking09 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking09 = NSManagedObject(entity: eJoking09!, insertIntoManagedObjectContext: managedObjectContext)
+        joking09.setValue(9, forKey: "id")
+        joking09.setValue("Chame um amigo para ser sua Joelma e Você será o Chimbinha", forKey: "joking")
+        
+        let eJoking10 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+        let joking10 = NSManagedObject(entity: eJoking10!, insertIntoManagedObjectContext: managedObjectContext)
+        joking10.setValue(10, forKey: "id")
+        joking10.setValue("Dançar YMCA", forKey: "joking")
+        
+//        let eJoking11 = NSEntityDescription.entityForName(ENTITY_JOKING_GAME, inManagedObjectContext: managedObjectContext)
+//        let joking11 = NSManagedObject(entity: eJoking11!, insertIntoManagedObjectContext: managedObjectContext)
+//        joking11.setValue(11, forKey: "id")
+//        joking11.setValue("", forKey: "joking")
 
         do {
             try

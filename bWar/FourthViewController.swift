@@ -18,6 +18,10 @@ class FourthViewController: UIViewController {
     @IBOutlet weak var lbNameT02: UILabel!
     @IBOutlet weak var lbPointsT02: UILabel!
     
+    lazy var daoTeam: BWDaoTeam = {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,9 +36,8 @@ class FourthViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     func initializeView(){
-        print("*** SecondViewController.initializeView")
+        print("*** FourthViewController.initializeView")
         UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
             lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
     }

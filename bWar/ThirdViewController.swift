@@ -12,11 +12,17 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var lbJoking: UILabel!
+    
     @IBOutlet weak var lbNameT01: UILabel!
     @IBOutlet weak var lbPointsT01: UILabel!
     
     @IBOutlet weak var lbNameT02: UILabel!
     @IBOutlet weak var lbPointsT02: UILabel!
+    
+    lazy var daoTeam: BWDaoTeam = {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +39,21 @@ class ThirdViewController: UIViewController {
     }
     
     func initializeView(){
-        print("*** SecondViewController.initializeView")
+        print("*** ThirdViewController.initializeView")
         UtilViewController().initializeView(self.lbNameT01, lbPointsT01: lbPointsT01,
             lbNameT02: lbNameT02, lbPointsT02: lbPointsT02)
     }
-
+    
+    @IBAction func raffleJoking(sender: AnyObject) {
+        print("raffleJoking")
+        let imitations = daoTeam.getJokings()
+        let randomNumber = Int(arc4random_uniform(10))
+        
+        print("joking random -> \(randomNumber)")
+        
+        lbJoking.text = imitations[randomNumber].joking
+    }
+    
     @IBAction func incrementPoints(sender: AnyObject) {
         let isTeamA = (segmentControl.selectedSegmentIndex == 0)
         UtilViewController().incrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
