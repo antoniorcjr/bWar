@@ -247,23 +247,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgAzul" translatesAutoresizingMaskIntoConstraints="NO" id="sQB-Y9-Aii">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marcadorRelogio" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-2V-Ewz">
-                                <rect key="frame" x="291" y="113" width="129" height="49"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bR-U7-GZa" userLabel="btRelogio">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bR-U7-GZa" userLabel="btRelogio">
                                 <rect key="frame" x="416" y="113" width="58" height="49"/>
                                 <state key="normal" image="botContadorRelogio"/>
                                 <connections>
                                     <action selector="startTime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0Zc-Ip-xBX"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHa-Ua-eFu" userLabel="btRestart">
-                                <rect key="frame" x="237" y="113" width="58" height="49"/>
-                                <state key="normal" image="botContadorRelogio"/>
-                                <connections>
-                                    <action selector="resetTime:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Mf2-ka-Xb1"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marcadorRelogio" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-2V-Ewz">
+                                <rect key="frame" x="291" y="113" width="129" height="49"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLb-Nx-VdX">
                                 <rect key="frame" x="303" y="127" width="105" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -374,8 +367,9 @@
                         <outlet property="lbPointsT02" destination="Ibk-rl-nQp" id="gSC-rH-kDy"/>
                         <outlet property="lbTopic" destination="byy-Yf-Xlr" id="Qix-rI-Ehh"/>
                         <outlet property="mimeLabel" destination="hCO-bg-NRi" id="J8Y-QP-Tiq"/>
+                        <outlet property="noButton" destination="iXY-7n-TV2" id="vaD-5n-VBa"/>
+                        <outlet property="okButton" destination="S8j-oV-PgS" id="gvQ-76-uJc"/>
                         <outlet property="raffleMimeButton" destination="MA9-Ch-DcJ" id="fXW-PL-BxT"/>
-                        <outlet property="resetTimeButton" destination="LHa-Ua-eFu" id="JNH-Ff-T7m"/>
                         <outlet property="segmentControl" destination="z06-ua-pLk" id="pry-uU-EGG"/>
                         <outlet property="teamLabel" destination="tiq-UU-MP4" id="8Xp-cp-53F"/>
                         <outlet property="timeButton" destination="4bR-U7-GZa" id="cBz-gX-w17"/>

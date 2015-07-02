@@ -19,7 +19,6 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeButton: UIButton!
-    @IBOutlet weak var resetTimeButton: UIButton!
 
     @IBOutlet weak var lbPointsT01: UILabel!
     @IBOutlet weak var lbPointsT02: UILabel!
@@ -28,10 +27,13 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var lbNameT02: UILabel!
     @IBOutlet weak var lbTopic: UILabel!
     
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var raffleMimeButton: UIButton!
     var timer: NSInteger = 60
     var clock: NSTimer?
     var counting: Bool = false
+    var hasMime: Bool = false
     
     lazy var daoTeam: BWDaoTeam = {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).daoTeam
@@ -44,7 +46,7 @@ class SecondViewController: UIViewController {
             backgroundTeam.image = UIImage(named: "bgAzul")
             teamLabel.text = "Team 1";
         case 1:
-            backgroundTeam.image = UIImage(named: "backGroundDuplo")
+            backgroundTeam.image = UIImage(named: "bgVermelho")
             teamLabel.text = "Team 2";
         default:
             break; 
@@ -53,8 +55,9 @@ class SecondViewController: UIViewController {
 
     
     @IBAction func startTime(sender: AnyObject) {
-        resetTimeButton.hidden = false
-
+        okButton.enabled = true
+        noButton.enabled = true
+        
         if (!counting) {
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
             segmentControl.enabled = false
@@ -67,14 +70,13 @@ class SecondViewController: UIViewController {
         }
     }
     
-    @IBAction func resetTime(sender: AnyObject) {
+    func resetTime() {
         if (counting) {
             clock!.invalidate()
             clock = nil
         }
 
         timeLabel.text = "01:00"
-        resetTimeButton.hidden = true;
         segmentControl.enabled = true
         raffleMimeButton.enabled = true
         counting = false
@@ -97,13 +99,16 @@ class SecondViewController: UIViewController {
             timeButton.enabled = true
             raffleMimeButton.enabled = true
             timer = 60
+            counting = false
         }
 
     }
     
     
     @IBAction func raffleMime(sender: AnyObject) {
-        
+        timeButton.enabled = true
+        hasMime = true
+
         let imitations = daoTeam.getImitations()
         let randomNumber = Int(arc4random_uniform(29))
         
@@ -111,11 +116,13 @@ class SecondViewController: UIViewController {
         
         mimeLabel.text = imitations[randomNumber].imitation
         lbTopic.text = imitations[randomNumber].topic
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        okButton.enabled = false
+        noButton.enabled = false
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -134,6 +141,11 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func incrementPoints(sender: AnyObject) {
+        okButton.enabled = false
+        noButton.enabled = false
+        timeButton.enabled = false
+        resetTime()
+        mimeLabel.text = "?"
         let isTeamA = (segmentControl.selectedSegmentIndex == 0)
         UtilViewController().incrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }
@@ -141,6 +153,11 @@ class SecondViewController: UIViewController {
     // TODO: codigo comentado pois nao acontece nada se errar,
     // o codigo anterior retirava ponto
     @IBAction func decrementPoints(sender: AnyObject) {
+        okButton.enabled = false
+        noButton.enabled = false
+        timeButton.enabled = false
+        resetTime()
+        mimeLabel.text = "?"
 //        let isTeamA = (segmentControl.selectedSegmentIndex == 0)
 //        UtilViewController().decrementPoints((isTeamA ? lbPointsT01 : lbPointsT02), isTeamA: isTeamA)
     }
